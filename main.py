@@ -21,6 +21,8 @@ def main():
             querystring = {"key": api_key,
                 "token": token}
             res_board = requests.request("GET", url_board, params=querystring)
+            print(res_board)
+            print(res_board.text)
             lists = json.loads(res_board.text)
             for column in lists:
                 if column['name'] == list_name:
