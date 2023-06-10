@@ -21,8 +21,6 @@ def main():
             querystring = {"key": api_key,
                 "token": token}
             res_board = requests.request("GET", url_board, params=querystring)
-            print(res_board)
-            print(res_board.text)
             lists = json.loads(res_board.text)
             for column in lists:
                 if column['name'] == list_name:
@@ -39,6 +37,8 @@ def main():
     }
     url_add_card = "https://api.trello.com/1/cards"
     res_board = requests.request("POST", url_add_card, params=querystring)
+    print(res_board)
+    print(res_board.text)
     print(json.loads(res_board.text))
 
 
